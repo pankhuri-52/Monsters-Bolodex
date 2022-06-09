@@ -20,7 +20,9 @@ render() {
         <p>
           Hi {this.state.name}
         </p>
-        <button>Change Name</button>
+        <button onClick = { () => {
+            this.setState( {name: 'Andrei'} )
+        }}>Change Name</button>
       </header>
     </div>
   );

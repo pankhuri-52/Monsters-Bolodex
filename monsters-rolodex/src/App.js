@@ -22,7 +22,16 @@ render() {
           Hi, My name is {this.state.name.firstName} {this.state.name.lastName}. I work at {this.state.company}.
         </p>
         <button onClick = { () => {
-            this.setState( {name: {firstName: 'Andrei', lastName:'Neaogie'}} )
+            this.setState( () => {
+            return {
+                name : {firstName: 'Andrei', lastName: 'Neaogie'}
+                //the object that we need to shallow merging in state
+              }
+            }, () => {
+                console.log(this.state) 
+                //callback function says that run me after you render everything.
+                //this callback function is gonna run after all state changes have been applied
+            } );
         }}>Change Name</button>
       </header>
     </div>

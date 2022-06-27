@@ -10,3 +10,8 @@ React is just a combination of components which are made of HTML, CSS and javasc
 HOOKS v/s CLASSES
 Hooks -> react-specific
 Classes -> mostly used in javascript.
+
+setState takes 2 functions (parameters: state, props):
+1. the object that we need to shallow merging in state.
+2. callback function says that run me after you render everything.
+   This callback function is gonna run after all state changes have been applied.

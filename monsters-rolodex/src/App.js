@@ -10,16 +10,20 @@ constructor() {
   this.state = {
     monsters: [
       {
-        name: 'Linda'
+        name: 'Linda',
+        id:'123edgt56'
       },
       {
-        name: 'Frank'
+        name: 'Frank',
+        id:'12ndfgyrt'
       },
       {
-        name: 'Jacky'
+        name: 'Jacky',
+        id:'1wb3yrt'
       },
       {
-        name: 'Andrei'
+        name: 'Andrei',
+        id:'uirf4fj'
       }
     ]
   }
@@ -30,7 +34,7 @@ render() {
     <div className="App">
       {
         this.state.monsters.map((monster) => {
-          return <h1>{monster.name}</h1>
+          return <h1 key={monster.id}>{monster.name}</h1>
         })
       }
     </div>

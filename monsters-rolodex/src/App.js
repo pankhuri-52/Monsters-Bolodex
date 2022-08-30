@@ -12,22 +12,17 @@ constructor() {
     monsters: [],
     searchField: ''
   };
-  console.log('constructor');
 }
 
 componentDidMount() {
-  console.log('componentDidMount');
-
+  
   fetch('https://jsonplaceholder.typicode.com/users')
     .then((response) => response.json())
     .then((users) => 
       this.setState(
       () =>  {
           return {monsters: users};
-      }, 
-      () => {
-          console.log(this.state);
-       }
+      }
     )); 
 }
 
@@ -44,7 +39,6 @@ render() {
   const {monsters, searchField} = this.state;
   const {onSearchChange} = this;
 
-  console.log('render');
   const filteredMonsters = monsters.filter((monster) => {
     return monster.name.toLocaleLowerCase().includes(searchField);
  })
@@ -58,7 +52,7 @@ render() {
             placeholder='Search monsters' 
             onChange={onSearchChange} />
 
-      <CardList />
+      <CardList monsters={filteredMonsters} />
     </div>
   );
  }
